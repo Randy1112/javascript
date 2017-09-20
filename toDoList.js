@@ -1,10 +1,22 @@
-//document.getElementById('ajouter').onclick = function(){document.getElementById("affichage").innerHTML = 'Bienvenue'};
+var longueurTableau = localStorage.length;
+var affichage = '';
+for(var i=0; i<longueurTableau; i++){
+    affichage = affichage + '<input id="delete" type="text" name="delete" value="' +  localStorage.key(i) + '" readonly><input type="button" onclick="supprimer()" value="Supprimer"><br>';
+}
+document.getElementById('afficherTitre').innerHTML = affichage;
 
-document.getElementById('ajouter').onclick = function(){
-    var tache = document.getElementById("tache").value;
-    document.getElementById('afficherTitre').innerHTML = tache;
+function ajouter(){
+    if(document.getElementById("tache").value != ''){
+        localStorage.setItem(document.getElementById("tache").value, document.getElementById("tache").value);
+    }
+    var longueurTableau = localStorage.length;
+    var affichage = '';
+    for(var i=0; i<longueurTableau; i++){
+        affichage = affichage + '<input id="delete" type="text" name="delete" value="' +  localStorage.key(i) + '" readonly><input type="button" onclick="supprimer()" value="Supprimer"><br>';
+    }
+    document.getElementById('afficherTitre').innerHTML = affichage;
+}
 
-    var tableau = [];
-    localStorage.setItem('tache', tache);
-
-};
+function supprimer(){
+    localStorage.removeItem(document.getElementById("delete").value);
+}

@@ -6,12 +6,12 @@
             <title>ToDo list</title>
         </head>
         <body>
-            <form action="" method="post">
+            <form id="monFormulaire" action="" method="post">
                 <label for="tache">Tache</label><br>
-                <input id="tache" type="text" name="tache"><br><br>
-                <!--<input id="ajouter "type="submit" value="Ajouter">-->
-                <div id="ajouter">Ajouter</div>
+                <input id="tache" type="text" name="tache"><br>
+                <input type="button" onclick="ajouter()" value="Ajouter">
             </form>
+            <br>
             <div id="afficherTitre"></div>
             <script type="text/javascript" src="toDoList.js"></script>
         </body>
