@@ -1,13 +1,10 @@
 //document.getElementById('ajouter').onclick = function(){document.getElementById("affichage").innerHTML = 'Bienvenue'};
 
 document.getElementById('ajouter').onclick = function(){
-    var titre = document.getElementById("titre").value;
-    var dateDebut =  document.getElementById("debut").value;
-    var dateFin =  document.getElementById("fin").value;
-    document.getElementById('afficherTitre').innerHTML = titre;
-    document.getElementById('afficherDebut').innerHTML = dateDebut;
-    document.getElementById('afficherFin').innerHTML = dateFin;
+    var tache = document.getElementById("tache").value;
+    document.getElementById('afficherTitre').innerHTML = tache;
 
-    localStorage.setItem('titre', titre);
-    
+    var tableau = [];
+    localStorage.setItem('tache', tache);
+
 };
